@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elect Your Leader</title>
+    <!-- Include Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .candidate-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .vote-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="mt-3">Elect Your Leader</h1>
+
+        <!-- Candidate Cards -->
+        <% candidates.forEach(candidate => { %>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="candidate-card">
+                        <h3><%= candidate.candidate_name %></h3>
+                        <p>Party: <%= candidate.party_name %></p>
+
+                        <!-- Convert binary image data to Base64 and use it as the image source -->
+                        <img src="data:image/png;base64,<%= candidate.symbol.toString('base64') %>" alt="Party Symbol" style="max-width: 100px; max-height: 100px;">
+
+                        <form action="/vote" method="post" onsubmit="playVoteAudio()">
+                            <input type="hidden" name="candidate_id" value="<%= candidate.id %>">
+                            <button type="submit" class="vote-btn">Vote</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <!-- Audio element for vote audio -->
+    <audio id="voteAudio" src="/views/voteaudio.mp3"></audio>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha2/dist/js/bootstrap.min.js"></script>
+
+    <!-- Script to play the vote audio -->
+    <script>
+        function playVoteAudio() {
+            var audio = document.getElementById('voteAudio');
+            audio.play();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Voting System</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      padding: 1em;
+      text-align: center;
+      color: white;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #444;
+      padding: 0.5em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Online Voting System</h1>
+  </header>
+
+  <nav>
+    <a href="/home">Home</a>
+    <a href="/contactus">Contact Us</a>
+    <a href="/help">Help Center</a>
+    <a href="/vote">Elect your leader</a>
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <div class="container">
+    <h2>Welcome to the Dashboard</h2>
+    <p>User Details:</p>
+    <ul>
+      <li>Name: <%= user.name %></li>
+      <li>Roll Number: <%= user.roll_number %></li>
+	<li>Year of Study: <%= user.year_of_study %></li>
+      <li>Department: <%= user.department %></li>
+      <li>Voter ID: <%= user.voter_id %></li>
+    </ul>
+  </div>
+</body>
+</html>

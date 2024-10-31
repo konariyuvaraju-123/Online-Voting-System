@@ -1,0 +1,59 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+
+    <h2>User Registration</h2>
+
+    <form action="/register" method="post">
+        <!-- User Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <br>
+
+        <!-- Unique Roll Number -->
+        <label for="rollNumber">Roll Number:</label>
+        <input type="text" id="rollNumber" name="rollNumber" required>
+
+        <br>
+
+        <!-- Department Dropdown -->
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="CSE">Computer Science and Engineering</option>
+            <option value="ECE">Electronics and Communication Engineering</option>
+            <option value="CE">Civil Engineering</option>
+            <option value="EEE">Electrical and Electronics Engineering</option>
+            <option value="MECH">Mechanical Engineering</option>
+            <option value="CHEM">Chemical Engineering</option>
+            <option value="IOT">Internet of Things</option>
+            <option value="AI">Artificial Intelligence</option>
+            <option value="IT">Information Technology</option>
+            <option value="DS">Data Science</option>
+        </select>
+
+        <br>
+
+        <!-- Year of Study Dropdown -->
+        <label for="yearOfStudy">Year of Study:</label>
+        <select id="yearOfStudy" name="yearOfStudy" required>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+        </select>
+
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
