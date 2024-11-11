@@ -35,4 +35,4 @@ These additional features are under consideration to enhance functionality and s
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/VijayaKumarGavara/Online-Voting-System.git
+  git clone https://github.com/konariyuvaraju-123/Online-Voting-System.git
